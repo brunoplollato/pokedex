@@ -6,15 +6,6 @@ export default function PokemonList() {
       <p className="text-3xl text-center font-bold">Pokemon List</p>
       <div className="flex flex-row justify-start gap-5 mt-5 flex-wrap">
         <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
       </div>
     </div>
   )
