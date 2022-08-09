@@ -26,7 +26,7 @@ const Home: NextPage = ({ pokemons }: any) => {
 
 export default Home
 
-export async function getServerSideProps(ctx) {
+export async function getServerSideProps(ctx: any) {
   const itensPerPage = 35;
   const page = 0;
   const data = await getPokemons(itensPerPage, itensPerPage * page);
