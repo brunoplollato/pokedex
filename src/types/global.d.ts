@@ -1,97 +1,96 @@
-declare module global {
-    export interface Ability2 {
-        name: string;
-        url: string;
-    }
-    export interface Ability {
-        ability: Ability2;
-        is_hidden: boolean;
-        slot: number;
-    }
-    export interface Form {
-        name: string;
-        url: string;
-    }
-    export interface Version {
-        name: string;
-        url: string;
-    }
-    export interface GameIndice {
-        game_index: number;
-        version: Version;
-    }
+export interface Ability2 {
+    name: string;
+    url: string;
+}
+export interface Ability {
+    ability: Ability2;
+    is_hidden: boolean;
+    slot: number;
+}
+export interface Form {
+    name: string;
+    url: string;
+}
+export interface Version {
+    name: string;
+    url: string;
+}
+export interface GameIndice {
+    game_index: number;
+    version: Version;
+}
 
-    export interface Item {
-        name: string;
-        url: string;
-    }
+export interface Item {
+    name: string;
+    url: string;
+}
 
-    export interface Version2 {
-        name: string;
-        url: string;
-    }
+export interface Version2 {
+    name: string;
+    url: string;
+}
 
-    export interface VersionDetail {
-        rarity: number;
-        version: Version2;
-    }
+export interface VersionDetail {
+    rarity: number;
+    version: Version2;
+}
 
-    export interface HeldItem {
-        item: Item;
-        version_details: VersionDetail[];
-    }
+export interface HeldItem {
+    item: Item;
+    version_details: VersionDetail[];
+}
 
-    export interface Move2 {
-        name: string;
-        url: string;
-    }
+export interface Move2 {
+    name: string;
+    url: string;
+}
 
-    export interface MoveLearnMethod {
-        name: string;
-        url: string;
-    }
+export interface MoveLearnMethod {
+    name: string;
+    url: string;
+}
 
-    export interface VersionGroup {
-        name: string;
-        url: string;
-    }
+export interface VersionGroup {
+    name: string;
+    url: string;
+}
 
-    export interface VersionGroupDetail {
-        level_learned_at: number;
-        move_learn_method: MoveLearnMethod;
-        version_group: VersionGroup;
-    }
+export interface VersionGroupDetail {
+    level_learned_at: number;
+    move_learn_method: MoveLearnMethod;
+    version_group: VersionGroup;
+}
 
-    export interface Move {
-        move: Move2;
-        version_group_details: VersionGroupDetail[];
-    }
+export interface Move {
+    move: Move2;
+    version_group_details: VersionGroupDetail[];
+}
 
-    export interface Species {
-        name: string;
-        url: string;
-    }
+export interface Species {
+    name: string;
+    url: string;
+}
 
-    export interface DreamWorld {
-        front_default: string;
-        front_female?: any;
-    }
+export interface DreamWorld {
+    front_default: string;
+    front_female?: any;
+}
 
-    export interface Home {
-        front_default: string;
-        front_female?: any;
-        front_shiny: string;
-        front_shiny_female?: any;
-    }
+export interface Home {
+    front_default: string;
+    front_female?: any;
+    front_shiny: string;
+    front_shiny_female?: any;
+}
 
-    export interface OfficialArtwork {
-        front_default: string;
-    }
+export interface OfficialArtwork {
+    front_default: string;
+}
 
-    export interface Other {
-        dream_world: DreamWorld;
-        home: Home;
-      official - artwork: OfficialArtwork;
+export interface Other {
+    dream_world: DreamWorld;
+    home: Home;
+    'official-artwork': OfficialArtwork;
 }
 
 export interface RedBlue {
@@ -113,9 +112,9 @@ export interface Yellow {
 }
 
 export interface GenerationI {
-      red - blue: RedBlue;
-yellow: Yellow;
-  }
+    'red - blue': RedBlue;
+    yellow: Yellow;
+}
 
 export interface Crystal {
     back_default: string;
@@ -171,9 +170,9 @@ export interface RubySapphire {
 
 export interface GenerationIii {
     emerald: Emerald;
-      firered - leafgreen: FireredLeafgreen;
-ruby - sapphire: RubySapphire;
-  }
+    'firered-leafgreen': FireredLeafgreen;
+    'ruby-sapphire': RubySapphire;
+}
 
 export interface DiamondPearl {
     back_default: string;
@@ -209,10 +208,10 @@ export interface Platinum {
 }
 
 export interface GenerationIv {
-      diamond - pearl: DiamondPearl;
-heartgold - soulsilver: HeartgoldSoulsilver;
-platinum: Platinum;
-  }
+    'diamond-pearl': DiamondPearl;
+    'heartgold-soulsilver': HeartgoldSoulsilver;
+    platinum: Platinum;
+}
 
 export interface Animated {
     back_default: string;
@@ -238,8 +237,8 @@ export interface BlackWhite {
 }
 
 export interface GenerationV {
-      black - white: BlackWhite;
-  }
+    'black-white': BlackWhite;
+}
 
 export interface OmegarubyAlphasapphire {
     front_default: string;
@@ -256,9 +255,9 @@ export interface XY {
 }
 
 export interface GenerationVi {
-      omegaruby - alphasapphire: OmegarubyAlphasapphire;
-x - y: XY;
-  }
+    'omegaruby-alphasapphire': OmegarubyAlphasapphire;
+    'x-y': XY;
+}
 
 export interface Icons {
     front_default: string;
@@ -274,7 +273,7 @@ export interface UltraSunUltraMoon {
 
 export interface GenerationVii {
     icons: Icons;
-      ultra - sun - ultra - moon: UltraSunUltraMoon;
+    'ultra-sun-ultra-moon': UltraSunUltraMoon;
   }
 
 export interface Icons2 {
@@ -287,14 +286,14 @@ export interface GenerationViii {
 }
 
 export interface Versions {
-      generation - i: GenerationI;
-generation - ii: GenerationIi;
-generation - iii: GenerationIii;
-generation - iv: GenerationIv;
-generation - v: GenerationV;
-generation - vi: GenerationVi;
-generation - vii: GenerationVii;
-generation - viii: GenerationViii;
+    'generation-i': GenerationI;
+    'generation-ii': GenerationIi;
+    'generation-iii': GenerationIii;
+    'generation-iv': GenerationIv;
+    'generation-v': GenerationV;
+    'generation-vi': GenerationVi;
+    'generation-vii': GenerationVii;
+    'generation-viii': GenerationViii;
   }
 
 export interface Sprites {
@@ -367,6 +366,5 @@ export interface pokeContextType {
     totalPages: number;
     pokemons: Pokemon[];
     favorites: Pokemon[];
-}
 }
 
