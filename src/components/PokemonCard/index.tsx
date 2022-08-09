@@ -1,11 +1,13 @@
 import Image from 'next/image';
+import { PokemonCardInterface } from '../../types/global'
+
 export default function PokemonCard({
   image,
   name,
   types,
   game_index,
   key
-}) {
+}: PokemonCardInterface) {
   return (
     <div className={`flex justify-center pr-4 py-2 shadow-md border-l-4 rounded-md w-56 bg-${types[0].type.name} border-${types[0].type.name}`} key={key}>
       <div>

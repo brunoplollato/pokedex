@@ -368,3 +368,24 @@ export interface pokeContextType {
     favorites: Pokemon[];
 }
 
+export interface type {
+    name: string;
+}
+export interface types {
+    slot: number;
+    type: type;
+}
+export interface PokemonCardInterface {
+    image: string;
+    name: string;
+    types: types[];
+    game_index: number;
+    key: number;
+}
+
+export interface PokemonListInterface {
+    pokemons: Pokemon[];
+    loading: boolean;
+    page: number;
+    totalPages: number;
+}

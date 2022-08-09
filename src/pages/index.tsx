@@ -7,7 +7,7 @@ import { getPokemonData, getPokemons } from '../api/api'
 import { Pokemon } from '../types/global'
 
 
-const Home: NextPage = ({ pokemons }) => {  
+const Home: NextPage = ({ pokemons }: any) => {  
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +18,7 @@ const Home: NextPage = ({ pokemons }) => {
 
       <Header />
       <main className="relative">
-        <PokemonList pokemons={pokemons} loading={false} page="1" totalPages="100" />
+        <PokemonList pokemons={pokemons} loading={false} page={1} totalPages={100} />
       </main>
     </div>
   )
