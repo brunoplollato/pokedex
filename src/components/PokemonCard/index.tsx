@@ -1,11 +1,4 @@
-type types = {
-  slot: number,
-  type: {
-    name: string,
-    url: string
-  }
-}
-
+import Image from 'next/image';
 export default function PokemonCard({
   image,
   name,
@@ -16,7 +9,7 @@ export default function PokemonCard({
   return (
     <div className={`flex justify-center pr-4 py-2 shadow-md border-l-4 rounded-md w-56 bg-${types[0].type.name} border-${types[0].type.name}`} key={key}>
       <div>
-        <img src={ image } alt={ name } />
+        <Image src={ image } alt={ name } width={96} height={96} />
       </div>
       <div className="flex flex-col">
         <p className="text-2xl text-extrathin">
