@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Popover } from '@headlessui/react'
-import SearchBar from '../SearchBar'
+import Image from 'next/image';
+import { Popover } from '@headlessui/react';
+import SearchBar from '../SearchBar';
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Workflow</span>
-              <img
+              <Image
                 className="h-8 w-auto sm:h-10"
                 src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
                 alt=""
