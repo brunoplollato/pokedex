@@ -7,24 +7,21 @@ import { getPokemonData, getPokemons } from '../api/api'
 import { Pokemon } from '../types/global'
 
 
-const Home: NextPage = ({ pokemons }) => {  
+const Details: NextPage = () => {  
   return (
     <div className={styles.container}>
       <Head>
-        <title>Pokedex | Home</title>
-        <meta name="description" content="Next.js Pokedex" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Pokedex | Pokemon</title>
       </Head>
 
       <Header />
       <main className="relative">
-        <PokemonList pokemons={pokemons} loading={false} page="1" totalPages="100" />
       </main>
     </div>
   )
 }
 
-export default Home
+export default Details
 
 export async function getServerSideProps(ctx) {
   const itensPerPage = 35;

@@ -10,15 +10,15 @@ export default function PokemonCard({
   image,
   name,
   types,
-  order,
+  game_index,
   key
 }) {
   return (
-    <div className="flex justify-center pr-4 py-2 shadow-md border-l-4 border-green-700 rounded-md bg-green-100 w-56" key={key}>
+    <div className={`flex justify-center pr-4 py-2 shadow-md border-l-4 rounded-md w-56 bg-${types[0].type.name} border-${types[0].type.name}`} key={key}>
       <div>
         <img src={ image } alt={ name } />
       </div>
-      <div>
+      <div className="flex flex-col">
         <p className="text-2xl text-extrathin">
           {name}
         </p>
@@ -30,7 +30,7 @@ export default function PokemonCard({
               )
           })}
         </div>
-            <p className="text-gray text-xs text-end w-full mt-3 text-gray-400">#{ order }</p>
+            <p className="text-gray text-xs text-end w-full mt-3 text-gray-400 mt-auto mix-blend-difference opacity-70">#{ game_index }</p>
       </div>
     </div>
   )

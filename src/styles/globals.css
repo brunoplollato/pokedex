@@ -29,6 +29,128 @@ a {
   }
 }
 
+.bg-normal {
+  background-color: hsl(280, 20%, 89%);
+}
+.bg-fighting {
+  background-color: hsl(21, 90%, 89%);
+}
+.bg-flying {
+  background-color: hsl(199, 89%, 89%);
+}
+.bg-poison {
+  background-color: hsl(258, 90%, 89%);
+}
+.bg-ground {
+  background-color: hsl(15, 75%, 89%);
+}
+.bg-rock {
+  background-color: hsl(33, 5%, 89%);
+}
+.bg-bug {
+  background-color: hsl(84, 81%, 89%);
+}
+.bg-ghost {
+  background-color: hsl(173, 80%, 89%);
+}
+.bg-steel {
+  background-color: hsl(172, 66%, 89%);
+}
+.bg-fire {
+  background-color: hsl(0, 84%, 89%);
+}
+.bg-water {
+  background-color: hsl(221, 83%, 89%);
+}
+.bg-grass {
+  background-color: hsl(161, 94%, 89%);
+}
+.bg-electric {
+  background-color: hsl(46, 97%, 89%);
+}
+.bg-psychic {
+  background-color: hsl(330, 81%, 89%);
+}
+.bg-ice {
+  background-color: hsl(198, 93%, 89%);
+}
+.bg-dragon {
+  background-color: hsl(192, 91%, 89%);
+}
+.bg-dark {
+  background-color: hsl(274, 66%, 89%);
+}
+.bg-fairy {
+  background-color: hsl(350, 89%, 89%);
+}
+.bg-unknown {
+  background-color: hsl(0, 0%, 89%);
+}
+.bg-shadow {
+  background-color: hsl(264, 67%, 89%);
+}
+
+.border-normal {
+  border-color: hsl(280, 20%, 30%);
+}
+.border-fighting {
+  border-color: hsl(21, 90%, 30%);
+}
+.border-flying {
+  border-color: hsl(199, 89%, 30%);
+}
+.border-poison {
+  border-color: hsl(258, 90%, 30%);
+}
+.border-ground {
+  border-color: hsl(15, 75%, 30%);
+}
+.border-rock {
+  border-color: hsl(33, 5%, 30%);
+}
+.border-bug {
+  border-color: hsl(84, 81%, 30%);
+}
+.border-ghost {
+  border-color: hsl(173, 80%, 30%);
+}
+.border-steel {
+  border-color: hsl(172, 66%, 30%);
+}
+.border-fire {
+  border-color: hsl(0, 84%, 30%);
+}
+.border-water {
+  border-color: hsl(221, 83%, 30%);
+}
+.border-grass {
+  border-color: hsl(161, 94%, 30%);
+}
+.border-electric {
+  border-color: hsl(46, 97%, 30%);
+}
+.border-psychic {
+  border-color: hsl(330, 81%, 30%);
+}
+.border-ice {
+  border-color: hsl(198, 93%, 30%);
+}
+.border-dragon {
+  border-color: hsl(192, 91%, 30%);
+}
+.border-dark {
+  border-color: hsl(274, 66%, 30%);
+}
+.border-fairy {
+  border-color: hsl(350, 89%, 30%);
+}
+.border-unknown {
+  border-color: hsl(0, 0%, 30%);
+}
+.border-shadow {
+  border-color: hsl(264, 67%, 30%);
+}
+
 .normal {
   background-color: rgb(233, 192, 252);
 }

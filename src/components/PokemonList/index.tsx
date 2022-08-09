@@ -9,13 +9,13 @@ export default function PokemonList({
   totalPages,
 }) {
   return (
-    <div className="flex justify-center max-w-7xl mx-auto px-4 sm:px-6 mt-4 flex-col">
-      <p className="text-3xl text-center font-bold">Pokemon List</p>
+    <div className="flex justify-center max-w-7xl mx-auto px-4 sm:px-6 mt-4 flex-col mb-20">
+      <p className="text-3xl text-center font-bold">Pokedex</p>
       <div className="flex flex-row justify-start gap-5 mt-5 flex-wrap">
         {
-          pokemons?.map(({ sprites, name, types, order }, key) => {
+          pokemons?.map(({ sprites, name, types, id }, key) => {
             return (
-              <PokemonCard image={sprites.front_default} name={name} types={types} order={order} key={key} />
+              <PokemonCard image={sprites.front_default} name={name} types={types} game_index={id} key={key} />
             )
           })
         }
