@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
-import PokemonList from '../components/PokemonList'
 import { getPokemonData, getPokemons } from '../api/api'
 import { Pokemon } from '../types/global'
 
@@ -23,7 +22,7 @@ const Details: NextPage = () => {
 
 export default Details
 
-export async function getServerSideProps(ctx) {
+export async function getServerSideProps(ctx: any) {
   const itensPerPage = 35;
   const page = 0;
   const data = await getPokemons(itensPerPage, itensPerPage * page);
