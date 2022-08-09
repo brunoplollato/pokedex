@@ -14,7 +14,9 @@ export default function Header() {
               <Image
                 className="h-8 w-auto sm:h-10"
                 src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
-                alt=""
+                width={100}
+                height={40}
+                alt="Pokedex"
               />
             </a>
           </div>
