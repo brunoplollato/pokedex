@@ -274,7 +274,7 @@ export interface UltraSunUltraMoon {
 export interface GenerationVii {
     icons: Icons;
     'ultra-sun-ultra-moon': UltraSunUltraMoon;
-  }
+}
 
 export interface Icons2 {
     front_default: string;
@@ -294,7 +294,7 @@ export interface Versions {
     'generation-vi': GenerationVi;
     'generation-vii': GenerationVii;
     'generation-viii': GenerationViii;
-  }
+}
 
 export interface Sprites {
     back_default: string;
@@ -388,4 +388,8 @@ export interface PokemonListInterface {
     loading: boolean;
     page: number;
     totalPages: number;
+}
+export interface ProgressBarType {
+    color: string | undefined;
+    size: number;
 }

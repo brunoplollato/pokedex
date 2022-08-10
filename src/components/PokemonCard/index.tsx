@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { PokemonCardInterface } from '../../types/global'
 
 export default function PokemonCard({
@@ -9,7 +10,8 @@ export default function PokemonCard({
   key
 }: PokemonCardInterface) {
   return (
-    <div className={`flex justify-center pr-4 py-2 shadow-md border-l-4 rounded-md w-56 bg-${types[0].type.name} border-${types[0].type.name}`} key={key}>
+    <Link href={`/details/${name}`} >
+      <div className={`flex justify-center pr-4 py-2 shadow-md border-l-4 rounded-md w-56 cursor-pointer bg-${types[0].type.name} border-${types[0].type.name}`} key={key}>
       <div>
         <Image src={ image } alt={ name } width={96} height={96} />
       </div>
@@ -28,5 +30,6 @@ export default function PokemonCard({
             <p className="text-gray text-xs text-end w-full mt-3 text-gray-400 mt-auto mix-blend-difference opacity-70">#{ game_index }</p>
       </div>
     </div>
+    </Link>
   )
 }

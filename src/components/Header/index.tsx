@@ -5,11 +5,11 @@ import SearchBar from '../SearchBar';
 
 export default function Header() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-b border-gray-200 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
+            <a href="/">
               <span className="sr-only">Workflow</span>
               <Image
                 className="h-8 w-auto sm:h-10"
@@ -20,7 +20,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="flex justify-center lg:w-0 lg:flex-1">
+          <div className="flex justify-end lg:w-0 lg:flex-1 px-3">
             <SearchBar />
           </div>
         </div>
