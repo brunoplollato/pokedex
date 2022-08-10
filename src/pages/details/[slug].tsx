@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import capitalize from '../../helpers/capitalize';
 import Breadcrumb from '../../components/Breadcrumb';
 import ProgressBar from '../../components/ProgressBar';
-import { Stat } from '../../types/global';
+import { Stat, Type } from '../../types/global';
 import { useState } from 'react';
 
 const Details: NextPage = ({ data }: any) => {
@@ -44,7 +44,7 @@ const Details: NextPage = ({ data }: any) => {
             </div>
             <div className="flex flex-row justify-center gap-1 my-2 w-28">
               {
-                pokemon[0]?.types?.map(({ type }, key) => {
+                pokemon[0]?.types?.map(({ type }: Type, key: number) => {
                   return (
                     <span className={`rounded-2xl px-2 leading-4 text-xs text-white ${type.name}`} key={key} >{ type.name }</span>
                   )
