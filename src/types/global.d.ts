@@ -386,7 +386,7 @@ export interface PokemonCardInterface {
 export interface PokemonListInterface {
     pokemons: Pokemon[];
     loading: boolean;
-    page: number;
+    next: string;
     totalPages: number;
 }
 export interface ProgressBarType {

@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
-import Header from '../../components/Header';
 import getServerSideProps from '../../utils/getServerSideProps';
 import { useRouter } from 'next/router';
 import capitalize from '../../helpers/capitalize';
@@ -21,7 +20,6 @@ const Details: NextPage = ({ pokemons }) => {
         <title>Pokedex | { capitalize(slug as string) }</title>
       </Head>
 
-      <Header />
       <main className='max-w-6xl mx-auto py-5'>
         <Breadcrumb last={capitalize(slug as string)} />
         <div className="flex mt-10 gap-5">
