@@ -9,7 +9,7 @@ import ProgressBar from '../../components/ProgressBar';
 import { Stat } from '../../types/global';
 import { useState } from 'react';
 
-const Details: NextPage = ({ data }) => {
+const Details: NextPage = ({ data }: any) => {
   const [pokemons, setPokemons] = useState(data)
   const router = useRouter();
   const { slug } = router.query;
