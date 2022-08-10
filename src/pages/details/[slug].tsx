@@ -7,12 +7,13 @@ import capitalize from '../../helpers/capitalize';
 import Breadcrumb from '../../components/Breadcrumb';
 import ProgressBar from '../../components/ProgressBar';
 import { Stat } from '../../types/global';
+import { useState } from 'react';
 
-const Details: NextPage = ({ pokemons }) => {
+const Details: NextPage = ({ data }) => {
+  const [pokemons, setPokemons] = useState(data)
   const router = useRouter();
   const { slug } = router.query;
   const pokemon = pokemons.filter((pokemon: { name: string }) => pokemon.name === slug)
-  console.log("🚀 ~ file: [slug].tsx ~ line 14 ~ pokemon", pokemon[0] )
 
   return (
     <div className='container'>

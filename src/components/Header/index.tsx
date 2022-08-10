@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { Popover } from '@headlessui/react';
 import SearchBar from '../SearchBar';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -9,16 +10,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b border-gray-200 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="/">
-              <span className="sr-only">Workflow</span>
+            <Link href="/">
               <Image
-                className="h-8 w-auto sm:h-10"
+                className="h-8 w-auto sm:h-10 cursor-pointer"
                 src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
                 width={100}
                 height={40}
                 alt="Pokedex"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex justify-end lg:w-0 lg:flex-1 px-3">
             <SearchBar />
