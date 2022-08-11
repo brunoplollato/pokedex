@@ -1,21 +1,12 @@
 import { createContext, useContext, useState, } from "react";
-import { pokeContextType, Props } from "../types/global";
+import { Props } from "../types/global";
 
-const PokeContextDefaultValues: pokeContextType = {
-  pokemons: [],
-  setPokemons: [],
-};
-
-const PokeContext = createContext<pokeContextType>(PokeContextDefaultValues);
+const PokeContext = createContext('');
 
 export const usePoke = () => useContext(PokeContext);
 
 export const PokemonProvider = ({ children }: Props) => {
-  const [pokemons, setPokemons] = useState([])
-  const value = {
-    pokemons,
-    setPokemons
-  }
+  const value = ''
   return (
     <PokeContext.Provider value={value}>
       {children}
