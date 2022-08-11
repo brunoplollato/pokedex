@@ -3,6 +3,7 @@ import { pokeContextType, Props } from "../types/global";
 
 const PokeContextDefaultValues: pokeContextType = {
   pokemons: [],
+  setPokemons: [],
 };
 
 const PokeContext = createContext<pokeContextType>(PokeContextDefaultValues);
@@ -15,7 +16,6 @@ export const PokemonProvider = ({ children }: Props) => {
     pokemons,
     setPokemons
   }
-  console.log("🚀 ~ file: PokemonContext.tsx ~ line 18 ~ PokemonProvider ~ pokemons", pokemons)
   return (
     <PokeContext.Provider value={value}>
       {children}
