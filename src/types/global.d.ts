@@ -360,12 +360,8 @@ export interface results {
     url: string;
 }
 export interface pokeContextType {
-    notFound: boolean;
-    loading: boolean;
-    page: number;
-    totalPages: number;
     pokemons: Pokemon[];
-    favorites: Pokemon[];
+    setPokemons: Pokemon[];
 }
 
 export interface type {

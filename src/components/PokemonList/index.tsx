@@ -2,6 +2,7 @@ import PokemonCard from "../PokemonCard";
 import { Pokemon, PokemonListInterface } from "../../types/global";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getPokemonData, fetchNext } from "../../api/api";
+import { usePoke } from '../../contexts/PokemonContext';
 import { useEffect, useState } from "react";
 
 export default function PokemonList({
@@ -13,6 +14,9 @@ export default function PokemonList({
   const [pokemonsData, setPokemonsData] = useState(pokemons)
   const [hasMore, setHasMore] = useState(true)
   const [nextLink, setNextLink] = useState(next)
+  const { setPokemons } = usePoke();
+  setPokemons(pokemonsData)
+
   const getMorePokemons = async () => {
     const res = await fetchNext(nextLink)
     const promises = res?.results?.map(async (pokemon: {url: string}) => {
@@ -34,11 +38,11 @@ export default function PokemonList({
         dataLength={pokemonsData.length}
         next={getMorePokemons}
         hasMore={hasMore}
-        loader={<p className="text-lg">Loading...</p>}
+        loader={<p className="text-lg text-center w-full">Loading...</p>}
         endMessage={
-          <p className="text-center text-lg">All pokemons loaded!</p>
+          <p className="text-lg text-center w-full">All pokemons loaded!</p>
         }
-        className="flex flex-row justify-start gap-5 mt-5 flex-wrap"
+        className="flex flex-row justify-center gap-y-8 gap-x-5 mt-10 flex-wrap"
       >
         {
           pokemonsData?.map(({ sprites, name, types, id }, key) => {

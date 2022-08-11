@@ -1,19 +1,26 @@
-import { createContext, useContext, } from "react";
-import { pokeContextType } from "../types/global";
+import { createContext, useContext, useState, } from "react";
+import { pokeContextType, Props } from "../types/global";
 
 const PokeContextDefaultValues: pokeContextType = {
-  page: 1,
-  totalPages: 1,
-  loading: false,
-  notFound: false,
   pokemons: [],
-  favorites: [],
 };
 
 const PokeContext = createContext<pokeContextType>(PokeContextDefaultValues);
 
 export const usePoke = () => useContext(PokeContext);
 
-export const PokeProvider = PokeContext.Provider;
+export const PokemonProvider = ({ children }: Props) => {
+  const [pokemons, setPokemons] = useState([])
+  const value = {
+    pokemons,
+    setPokemons
+  }
+  console.log("🚀 ~ file: PokemonContext.tsx ~ line 18 ~ PokemonProvider ~ pokemons", pokemons)
+  return (
+    <PokeContext.Provider value={value}>
+      {children}
+    </PokeContext.Provider>
+  )
+};
 
 export default PokeContext;

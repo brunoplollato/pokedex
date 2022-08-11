@@ -13,7 +13,7 @@ export default function Header() {
             <Link href="/">
               <Image
                 className="h-8 w-auto sm:h-10 cursor-pointer"
-                src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+                src="/pokemon.svg"
                 width={100}
                 height={40}
                 alt="Pokedex"
