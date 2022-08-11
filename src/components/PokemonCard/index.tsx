@@ -24,7 +24,12 @@ export default function PokemonCard({
       <Link href={`/details/${name}`} >
         <div className={`flex justify-center pr-4 py-2 shadow-md border-l-4 rounded-md w-56 h-28 min-h-full cursor-pointer bg-${types[0].type.name} border-${types[0].type.name}`} key={key}>
           <div>
-            <Image src={ image } alt={ name } width={96} height={96} />
+            <Image
+              src={image}
+              alt={name}
+              width={96}
+              height={96}
+            />
           </div>
           <div className="flex flex-col">
             <p className="text-2xl text-extrathin">

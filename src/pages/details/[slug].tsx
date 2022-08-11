@@ -117,6 +117,10 @@ console.log("🚀 ~ file: [slug].tsx ~ line 14 ~ pokemon", pokemon)
 export default Details
 
 export async function getServerSideProps(ctx: any) {
+  ctx.res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
   const pokemon = await searchPokemon(ctx.query.slug);
 
   return {

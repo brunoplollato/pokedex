@@ -12,11 +12,11 @@ export default function Header() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <Image
-                className="h-8 w-auto sm:h-10 cursor-pointer"
                 src="/pokemon.svg"
+                alt="Pokedex"
                 width={100}
                 height={40}
-                alt="Pokedex"
+                className="h-8 w-auto sm:h-10 cursor-pointer"
               />
             </Link>
           </div>
