@@ -2,7 +2,6 @@ import PokemonCard from "../PokemonCard";
 import { Pokemon, PokemonListInterface } from "../../types/global";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getPokemonData, fetchNext } from "../../api/api";
-import { usePoke } from '../../contexts/PokemonContext';
 import { useEffect, useState } from "react";
 
 export default function PokemonList({
@@ -14,8 +13,6 @@ export default function PokemonList({
   const [pokemonsData, setPokemonsData] = useState(pokemons)
   const [hasMore, setHasMore] = useState(true)
   const [nextLink, setNextLink] = useState(next)
-  const { setPokemons } = usePoke();
-  setPokemons(pokemonsData)
 
   const getMorePokemons = async () => {
     const res = await fetchNext(nextLink)

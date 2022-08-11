@@ -27,6 +27,10 @@ const Home: NextPage = ({ data, res }: any) => {
 export default Home
 
 export async function getServerSideProps(ctx: any) {
+  ctx.res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
   const itensPerPage = 25;
   const page = 0;
   const res = await getPokemons(itensPerPage, itensPerPage * page);
