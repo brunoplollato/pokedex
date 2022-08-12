@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react"
 import { searchPokemonGQL } from "../../api/api";
 import SearchPreview from "../SearchPreview"
@@ -26,11 +27,13 @@ const useOutsideClick = (callback) => {
 export default function SearchBar(props) {
   const [result, setResult] = useState([]);
   const [value, setValue] = useState('')
+  const [inputAnimate, setInputAnimate] = useState({width: 0, paddingRight: '0', paddingLeft: '5px', overflow: 'hidden'})
   const [previewOpen, setPreviewOpen] = useState(false)
 
   const handleClickOutside = () => {
     setPreviewOpen(false)
     setValue('')
+    setInputAnimate({width: 0, paddingRight: '0', paddingLeft: '5px', overflow: 'hidden'})
   };
 
   const ref = useOutsideClick(handleClickOutside);
@@ -46,9 +49,10 @@ export default function SearchBar(props) {
     // On first render you don't want to launch anything
     // Thus, you check if the user typed a query at first
     let timer = setTimeout(() => {
-      if(value.length >= 3)
+      if(value.length >= 3) {
         setPreviewOpen(true)
         search(value.toLowerCase())
+      }
     }, 1500)
 
     // If useEffect() relaunches, you clear the function
@@ -62,23 +66,33 @@ export default function SearchBar(props) {
 
   return (
     <div className="mt-1 relative shadow-sm flex" ref={ref as any}>
-      <input
+      <motion.input
+        initial={{width: 0, paddingRight: 0, paddingLeft: '5px', overflow: 'visible'}}
+        animate={inputAnimate}
         type="text"
         name="price"
         id="price"
         autoComplete="off"
-        className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md rounded-r-none outline-none"
-        placeholder="Procurar..."
+        className="focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md rounded-r-none outline-none"
+        placeholder="Search..."
         value={value}
         onChange={e => setValue(e.target.value)}
       />
-      <button type="button" className="p-2 bg-white rounded-r-md">
+      <button
+        type="button"
+        className="p-2 bg-white rounded-r-md"
+        onClick={() => setInputAnimate({ width: 270, paddingRight: '3rem', paddingLeft: '1rem', overflow: 'visible' })}
+      >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="gray" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </button>
       {
-        previewOpen && <div className="absolute shadow-md flex flex-col w-full bg-white rounded-b-md top-9 p-3 gap-5 z-50">
+        previewOpen &&
+        <div
+          onClick={() => setResult([])}
+          className="absolute shadow-md flex flex-col w-full bg-white rounded-b-md top-9 p-3 gap-5 z-50"
+        >
         {
           result.length > 0 && result?.slice(0, 5)?.map((pokemon: any, key: number) => {
             return (
