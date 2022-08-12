@@ -8,7 +8,6 @@ import loaderAnimation from "../../animation/loaderAnimation.json";
 
 export default function PokemonList({
   pokemons,
-  loading,
   next,
   totalPages,
 }: PokemonListInterface) {
