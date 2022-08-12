@@ -24,6 +24,14 @@ a {
   box-sizing: border-box;
 }
 
+.listLoader {
+  svg {
+    width: 100px !important;
+    height: 30px !important;
+    transform: scale(4.8) !important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
