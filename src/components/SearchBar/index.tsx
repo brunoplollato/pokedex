@@ -4,7 +4,7 @@ import SearchPreview from "../SearchPreview"
 
 
 const useOutsideClick = (callback) => {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
     const handleClick = (event) => {
