@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { ProgressBarType } from "../../types/global";
 
-const ProgressBar = ({
+export default function ProgressBar({
   color,
   size
-}: ProgressBarType) => {
+}: ProgressBarType) {
   return (
     <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
       <motion.div
@@ -23,5 +23,3 @@ const ProgressBar = ({
     </div>
   )
 }
-
-export default ProgressBar;
