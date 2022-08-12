@@ -15,10 +15,10 @@ export default function ProgressBar({
           stiffness: 260,
           damping: 20
         }}
-        className={`bg-${color}-600 h-4 text-xs text-center text-white p-0.5 leading-none rounded-full`}>        
+        className={`${color} h-4 text-xs text-center text-white p-0.5 leading-none rounded-full`}>
 
         {size}
-        
+
       </motion.div>
     </div>
   )

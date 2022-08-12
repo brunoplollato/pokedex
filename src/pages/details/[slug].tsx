@@ -9,10 +9,10 @@ import { Stat, Type } from '../../types/global';
 import { searchPokemon } from '../../api/api';
 
 const Details: NextPage = ({pokemon}: any) => {
-console.log("🚀 ~ file: [slug].tsx ~ line 14 ~ pokemon", pokemon)
+console.log("🚀 ~ file: [slug].tsx ~ line 12 ~ pokemon", pokemon)
   const router = useRouter();
   const { slug } = router.query;
-  
+
 
   return (
     <div className='container'>
@@ -25,7 +25,7 @@ console.log("🚀 ~ file: [slug].tsx ~ line 14 ~ pokemon", pokemon)
         <div className="flex mt-10 gap-5">
           <div className="w-1/2">
             <Image
-              src={pokemon.sprites.other.dream_world.front_default}
+              src={pokemon.sprites.other.dream_world.front_default || `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
               alt={slug as string}
               width="600"
               height="600"
@@ -37,7 +37,7 @@ console.log("🚀 ~ file: [slug].tsx ~ line 14 ~ pokemon", pokemon)
                 <Image src={pokemon.sprites.front_default} alt={slug as string} width="96" height="96" className="w-36" />
               </div>
               <div className="flex justify-between items-end w-full">
-                <h2 className="text-4xl font-bold">{capitalize(slug as string)}</h2>
+                <h2 className="text-4xl font-bold ml-3">{capitalize(slug as string)}</h2>
                 <span className="text-2xl font-bold italic text-gray-500">#{ pokemon.id }</span>
               </div>
             </div>
@@ -78,17 +78,17 @@ console.log("🚀 ~ file: [slug].tsx ~ line 14 ~ pokemon", pokemon)
                     const color = () => {
                       switch (stat?.stat?.name) {
                         case 'hp':
-                          return 'red'
+                          return 'bg-red-600'
                         case 'attack':
-                          return 'orange'
+                          return 'bg-orange-600'
                         case 'defense':
-                          return 'green'
+                          return 'bg-green-600'
                         case 'special-attack':
-                          return 'amber'
+                          return 'bg-amber-600'
                         case 'special-defense':
-                          return 'purple'
+                          return 'bg-purple-600'
                         case 'speed':
-                          return 'blue'
+                          return 'bg-blue-600'
                         default:
                           break;
                       }
