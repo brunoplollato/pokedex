@@ -3,6 +3,8 @@ import { Pokemon, PokemonListInterface } from "../../types/global";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getPokemonData, fetchNext } from "../../api/api";
 import { useEffect, useState } from "react";
+import LottieLoader from "react-lottie-loader";
+import loaderAnimation from "../../animation/loaderAnimation.json";
 
 export default function PokemonList({
   pokemons,
@@ -35,7 +37,7 @@ export default function PokemonList({
         dataLength={pokemonsData.length}
         next={getMorePokemons}
         hasMore={hasMore}
-        loader={<p className="text-lg text-center w-full">Loading...</p>}
+        loader={<LottieLoader animationData={loaderAnimation} className="listLoader" />}
         endMessage={
           <p className="text-lg text-center w-full">All pokemons loaded!</p>
         }
