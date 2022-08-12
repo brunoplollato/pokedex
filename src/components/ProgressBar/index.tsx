@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { ProgressBarType } from "../../types/global";
 
-const ProgressBar = ({
+export default function ProgressBar({
   color,
   size
-}: ProgressBarType) => {
+}: ProgressBarType) {
   return (
     <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
       <motion.div
@@ -15,13 +15,11 @@ const ProgressBar = ({
           stiffness: 260,
           damping: 20
         }}
-        className={`bg-${color}-600 h-4 text-xs text-center text-white p-0.5 leading-none rounded-full`}>        
+        className={`${color} h-4 text-xs text-center text-white p-0.5 leading-none rounded-full`}>
 
         {size}
-        
+
       </motion.div>
     </div>
   )
 }
-
-export default ProgressBar;

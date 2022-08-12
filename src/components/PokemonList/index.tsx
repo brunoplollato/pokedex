@@ -23,7 +23,7 @@ export default function PokemonList({
     setPokemonsData(pokemonsData => [...pokemonsData, ...data])
     setNextLink(res.next)
   }
-  
+
   useEffect(() => {
     setHasMore(+totalPages > pokemonsData.length ? true : false)
   }, [pokemonsData])

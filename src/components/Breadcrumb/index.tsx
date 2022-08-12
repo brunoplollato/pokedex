@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Breadcrumb = ({ last }: any) => {
+export default function Breadcrumb({ last }: any) {
   return (
     <nav className="rounded-md w-full">
       <ol className="list-reset flex">
@@ -11,5 +11,3 @@ const Breadcrumb = ({ last }: any) => {
     </nav>
   )
 };
-
-export default Breadcrumb;
